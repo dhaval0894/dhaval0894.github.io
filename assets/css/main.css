@@ -220,7 +220,8 @@ body {
   -webkit-tap-highlight-color: #FFF498; }
 
 body {
-  background-image: url("../img/profile-5.jpg");
+  background-color: #000000;
+  background: url("../img/profile-5.jpg") no-repeat center;
   background-size: cover;
   font-size: 14px;
   line-height: 1.6;
@@ -228,6 +229,15 @@ body {
   color: #fff;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%; }
+  body:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(to bottom right, #844242, #000000);
+    opacity: 0.6; }
 
 .l-viewport {
   position: relative;
@@ -369,7 +379,7 @@ body {
       left: 10px;
       color: #fff;
       font-size: 14px;
-      font-weight: 300;
+      font-weight: 700;
       opacity: 0;
       visibility: hidden; }
     .side-nav > li::before {
@@ -547,6 +557,8 @@ body {
             margin-top: 45%; }
           .work--lockup .slider--item-image-fit img {
             width: 95%; }
+          .work--lockup .slider--item-image-background img {
+            background: #fff; }
         .work--lockup .slider--item-left {
           top: 50%;
           left: 0;
