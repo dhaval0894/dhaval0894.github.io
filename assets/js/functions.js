@@ -4,16 +4,17 @@ $( document ).ready(function() {
 
   // DOMMouseScroll included for firefox support
   var canScroll = true,
-      scrollController = null;
+      scrollController = null,
+        trackPosition = 0;
   $(this).on('mousewheel DOMMouseScroll', function(e){
 
     if (!($('.outer-nav').hasClass('is-vis'))) {
 
       e.preventDefault();
-
+      
       var delta = (e.originalEvent.wheelDelta) ? -e.originalEvent.wheelDelta : e.originalEvent.detail * 20;
 
-      if (delta > 50 && canScroll) {
+      if (delta > 50 && canScroll && trackPosition !== 2) {
         canScroll = false;
         clearTimeout(scrollController);
         scrollController = setTimeout(function(){
@@ -21,7 +22,7 @@ $( document ).ready(function() {
         }, 800);
         updateHelper(1);
       }
-      else if (delta < -50 && canScroll) {
+      else if (delta < -50 && canScroll && trackPosition !== 0) {
         canScroll = false;
         clearTimeout(scrollController);
         scrollController = setTimeout(function(){
@@ -34,7 +35,7 @@ $( document ).ready(function() {
 
   });
 
-  $('.side-nav li, .outer-nav li').click(function(){
+  $('.side-nav li').click(function(){
 
     if (!($(this).hasClass('is-active'))) {
 
@@ -43,7 +44,9 @@ $( document ).ready(function() {
           curPos = $this.parent().children().index(curActive),
           nextPos = $this.parent().children().index($this),
           lastItem = $(this).parent().children().length - 1;
-
+      
+      trackPosition = nextPos    
+          
       updateNavs(nextPos);
       updateContent(curPos, nextPos, lastItem);
 
@@ -51,25 +54,16 @@ $( document ).ready(function() {
 
   });
 
-  $('.cta').click(function(){
-
-    var curActive = $('.side-nav').find('.is-active'),
-        curPos = $('.side-nav').children().index(curActive),
-        lastItem = $('.side-nav').children().length - 1,
-        nextPos = lastItem;
-
-    updateNavs(lastItem);
-    updateContent(curPos, nextPos, lastItem);
-
-  });
-
   // swipe support for touch devices
   var targetElement = document.getElementById('viewport'),
       mc = new Hammer(targetElement);
+  
   mc.get('swipe').set({ direction: Hammer.DIRECTION_VERTICAL });
   mc.on('swipeup swipedown', function(e) {
 
-    updateHelper(e);
+    if (!!!((e.type === "swipeup" && trackPosition === 2) || (e.type === "swipedown" && trackPosition === 0))) {
+      updateHelper(e);
+    }    
 
   });
 
@@ -113,15 +107,16 @@ $( document ).ready(function() {
         updateContent(curPos, nextPos, lastItem);
       }
     }
+    
+    trackPosition = nextPos
 
   }
 
   // sync side and outer navigations
   function updateNavs(nextPos) {
 
-    $('.side-nav, .outer-nav').children().removeClass('is-active');
+    $('.side-nav').children().removeClass('is-active');
     $('.side-nav').children().eq(nextPos).addClass('is-active');
-    $('.outer-nav').children().eq(nextPos).addClass('is-active');
 
   }
 
@@ -229,27 +224,6 @@ $( document ).ready(function() {
 
   }
 
-  function transitionLabels() {
-
-    $('.work-request--information input').focusout(function(){
-
-      var textVal = $(this).val();
-
-      if (textVal === "") {
-        $(this).removeClass('has-value');
-      }
-      else {
-        $(this).addClass('has-value');
-      }
-
-      // correct mobile device window position
-      window.scrollTo(0, 0);
-
-    });
-
-  }
-
   workSlider();
-  transitionLabels();
 
 });
