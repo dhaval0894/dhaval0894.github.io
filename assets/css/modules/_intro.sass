@@ -13,54 +13,17 @@
 
   &--banner
     position: relative
-    height: 475px  
+    margin-top: 5%
 
   &--list > li
     margin: 0 0 1.5em 0       
       
   &--text-primary
     font-size: 30px
+    font-weight: 700
 
   &--text-secondary
     font-size: 20px  
-
-    h1
-      position: relative
-      font-size: 68px
-      font-weight: 900
-      line-height: 1
-      z-index: 1
-
-    button
-      position: relative
-      padding: 5px 17px 5px 12px
-      font-weight: 700
-      text-transform: uppercase
-      background-color: transparent
-      border: none
-
-      .btn-background
-        position: absolute
-        top: 0
-        left: 23px
-        right: 0
-        height: 100%
-        background-color: $highlight
-        z-index: -1
-        transition: left .2s ease-in-out
-
-      &:hover
-        .btn-background
-          left: 0
-
-      &:focus
-        outline: none
-
-      svg
-        position: relative
-        left: 5px
-        width: 15px
-        fill: $white
 
     img
       position: absolute
@@ -68,6 +31,7 @@
       right: -12px
 
   &--options
+    position: relative
     display: flex
     justify-content: center
     margin: 0
@@ -76,17 +40,17 @@
 
     &::before
       content: ""
-      position: absolute
-      bottom: 100px
-      left: -15px
+      position: relative
+      bottom: -25px
+      right: 15px
       height: 2px
       width: 40%
       background-color: $muted-gray
 
     &::after
       content: ""
-      position: absolute
-      bottom: 100px
+      position: relative
+      bottom: -25px
       right: -15px
       height: 2px
       width: 40%
@@ -113,16 +77,11 @@
 
   .intro
 
-    &--banner
-      height: 380px
-
-      h1
-        font-size: 55px
-
-      img
-        width: 430px
+    &--text-primary
+      margin: 1%    
 
     &--options
+      margin: 2%
 
       & > a
         margin-right: 30px
@@ -134,17 +93,9 @@
 
   .intro
 
-    &--banner
-      height: 305px
-
-      h1
-        font-size: 44px
-
-      img
-        width: 330px
-
     &--options
-      display: block
+      display: flex
+      margin: 1%
 
       & > a
         display: block
@@ -154,32 +105,42 @@
         &:last-child
           margin-bottom: 0
 
+    &--list > li
+      margin: 0 0 0.5em 0
+
 @media (max-width: 600px)
 
   .intro
 
     &--banner
-      height: 360px
+      margin-top: 10%
 
-      h1
-        font-size: 55px
+    &--text-primary 
+      margin: 1%    
 
-      img
-        display: none
+    &--options
+      margin: 0    
 
-@media (max-width: 600px) and (max-height: 750px)
+@media (max-width: 490px)      
 
   .intro
 
-    &--banner
-      height: auto
+    &--text-primary
+      font-size: 25px
+      font-weight: 700
 
-      &::before,
-      &::after
-        display: none
-
-      h1
-        margin-top: 0
+    &--text-secondary 
+      font-size: 18px  
 
     &--options
-      display: none
+      padding: 5%  
+
+@media (max-width: 375px)      
+
+  .intro
+
+    &--options
+      padding: 2%
+
+    &--list > li
+      margin: 0
