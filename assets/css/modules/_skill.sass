@@ -1,0 +1,105 @@
+.skill
+  position: relative
+  display: flex
+  width: 900px
+  max-width: 75%
+  height: 100%
+  flex-direction: column
+  justify-content: center
+  margin: 0 auto
+
+  @media (max-width: 1180px)
+    max-width: 100%
+
+  &--banner
+    position: relative
+    margin-top: 5%
+
+  &--list > li
+    margin: 0 0 1.5em 0       
+      
+  &--text-primary
+    font-size: 30px
+    font-weight: 700
+
+  &--text-secondary
+    font-size: 20px 
+
+  &--text-footer
+    font-size: 16px
+
+  &--text-email
+    color: #3495b7
+
+  &--options
+    position: relative
+    display: flex
+    justify-content: left
+    margin: 0
+    padding: 0
+    list-style: none    
+
+    h3
+      font-size: 16px
+      text-transform: uppercase
+
+    p
+      margin-bottom: 0
+
+@media (max-width: 900px)
+
+  .skill
+
+    &--text-primary
+      margin: 1%    
+
+    &--options
+      margin: 2%
+
+@media (max-width: 767px)
+
+  .skill
+
+    &--options
+      display: flex
+      margin: 1%
+
+    &--list > li
+      margin: 0 0 0.5em 0
+
+@media (max-width: 600px)
+
+  .skill
+
+    &--banner
+      margin-top: 10%
+
+    &--text-primary 
+      margin: 1%    
+
+    &--options
+      margin: 0    
+
+@media (max-width: 490px)      
+
+  .skill
+
+    &--text-primary
+      font-size: 25px
+      font-weight: 700
+
+    &--text-secondary 
+      font-size: 18px  
+
+    &--options
+      padding: 5%  
+
+@media (max-width: 375px)      
+
+  .skill
+
+    &--options
+      padding: 2%
+
+    &--list > li
+      margin: 0

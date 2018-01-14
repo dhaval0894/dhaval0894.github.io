@@ -633,7 +633,7 @@ body {
     width: auto; }
     .work--lockup .slider--item-left, .work--lockup .slider--item-right {
       display: none; } }
-.project {
+.skill {
   position: relative;
   display: flex;
   width: 900px;
@@ -643,53 +643,65 @@ body {
   justify-content: center;
   margin: 0 auto; }
   @media (max-width: 1180px) {
-    .project {
+    .skill {
       max-width: 100%; } }
-  .project h2 {
-    margin: 0 0 20px 0;
-    font-size: 30px;
-    text-align: center; }
-  .project--banner {
+  .skill--banner {
     position: relative;
-    height: 475px; }
-  .project--list--title {
-    color: #0f33ff;
+    margin-top: 5%; }
+  .skill--list > li {
+    margin: 0 0 1.5em 0; }
+  .skill--text-primary {
+    font-size: 30px;
+    font-weight: 700; }
+  .skill--text-secondary {
+    font-size: 20px; }
+  .skill--text-footer {
+    font-size: 16px; }
+  .skill--text-email {
+    color: #3495b7; }
+  .skill--options {
+    position: relative;
+    display: flex;
+    justify-content: left;
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+    .skill--options h3 {
+      font-size: 16px;
+      text-transform: uppercase; }
+    .skill--options p {
+      margin-bottom: 0; }
+
+@media (max-width: 900px) {
+  .skill--text-primary {
+    margin: 1%; }
+  .skill--options {
+    margin: 2%; } }
+@media (max-width: 767px) {
+  .skill--options {
+    display: flex;
+    margin: 1%; }
+  .skill--list > li {
+    margin: 0 0 0.5em 0; } }
+@media (max-width: 600px) {
+  .skill--banner {
+    margin-top: 10%; }
+  .skill--text-primary {
+    margin: 1%; }
+  .skill--options {
+    margin: 0; } }
+@media (max-width: 490px) {
+  .skill--text-primary {
     font-size: 25px;
     font-weight: 700; }
-
-@media (max-width: 767px) {
-  .about--banner {
-    height: 305px; }
-    .about--banner::before {
-      top: 0;
-      left: 125px; }
-    .about--banner::after {
-      top: 35px;
-      left: 260px; }
-    .about--banner h2 {
-      margin-top: 10px;
-      font-size: 44px; }
-      .about--banner h2::before {
-        top: 28px;
-        left: 168px; }
-      .about--banner h2::after {
-        top: 163px;
-        left: 163px; } }
-@media (max-width: 600px) {
-  .about--banner {
-    height: auto; }
-    .about--banner::before {
-      left: 155px; }
-    .about--banner::after {
-      left: 310px; }
-    .about--banner h2 {
-      margin-top: 0;
-      font-size: 55px; }
-      .about--banner h2::before {
-        top: 43px;
-        left: 214px; }
-      .about--banner h2::after {
-        top: 205px;
-        left: 205px; } }
+  .skill--text-secondary {
+    font-size: 18px; }
+  .skill--options {
+    padding: 5%; } }
+@media (max-width: 375px) {
+  .skill--options {
+    padding: 2%; }
+  .skill--list > li {
+    margin: 0; } }
 
 /*# sourceMappingURL=main.css.map */
