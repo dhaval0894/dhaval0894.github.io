@@ -375,8 +375,8 @@ body {
     cursor: pointer; }
     .side-nav > li span {
       position: relative;
-      top: 3px;
-      left: 10px;
+      top: 0;
+      left: 0;
       color: #fff;
       font-size: 14px;
       font-weight: 700;
@@ -391,7 +391,9 @@ body {
       font-weight: 300; }
   .side-nav li.is-active {
     color: #0f33ff;
-    transition: color 0.4s ease-in-out; }
+    transition: color 0.4s ease-in-out;
+    font-size: 20px;
+    left: -2px; }
     .side-nav li.is-active span {
       opacity: 1;
       visibility: visible;
