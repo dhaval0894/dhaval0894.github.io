@@ -419,6 +419,9 @@ body {
     margin-top: 5%; }
   .intro--list > li {
     margin: 0 0 1.5em 0; }
+  .intro--list-link {
+    text-decoration: none;
+    color: #3495b7; }
   .intro--text-primary {
     font-size: 30px;
     font-weight: 700; }
